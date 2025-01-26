@@ -7,10 +7,10 @@ import java.util.Scanner;
 public class Main {
     private static Integer numberOfRoads = 0;
     private static Integer interval = 0;
-    private static Scanner scanner = new Scanner(System.in);
-    private static List<Road> roadQueue = new ArrayList<>();
-    private static QueueThread queueThread = new QueueThread(roadQueue);
-    private static Thread thread = new Thread(queueThread);
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final List<Road> roadQueue = new ArrayList<>();
+    private static final QueueThread queueThread = new QueueThread(roadQueue);
+    private static final Thread thread = new Thread(queueThread);
 
 
 
