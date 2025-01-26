@@ -1,3 +1,14 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+*.yaml
+# gradle
+.gradle/
+build
+
+**/*.xml
+**/*.iml
+
+# idea config
+.idea

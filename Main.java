@@ -7,17 +7,17 @@ import java.util.Scanner;
 public class Main {
     private static Integer numberOfRoads = 0;
     private static Integer interval = 0;
-    private static Scanner scanner;
-    private static Thread thread;
-    private static QueueThread queueThread;
+    private static Scanner scanner = new Scanner(System.in);
     private static List<Road> roadQueue = new ArrayList<>();
+    private static QueueThread queueThread = new QueueThread(roadQueue);
+    private static Thread thread = new Thread(queueThread);
+
+
 
 
 
     public static void main(String[] args) {
-        scanner = new Scanner(System.in);
-        queueThread = new QueueThread(roadQueue);
-        thread = new Thread(queueThread);
+
         System.out.println("Welcome to the traffic management system!");
         getInfo();
 
@@ -49,6 +49,7 @@ public class Main {
             switch (option.matches("[0123]") ? Integer.parseInt(option) : -1){
                 case 0 -> {
                     thread.interrupt();
+                    scanner.close();
                     System.exit(0);
                 }
                 case 1 -> roadAdd();
